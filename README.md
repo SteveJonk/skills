@@ -11,8 +11,8 @@ A Skill is a folder containing a `SKILL.md` file with YAML frontmatter (`name` +
 
 | Skill | Description |
 |---|---|
-| [`html-to-next-tailwind`](./skills/html-to-next-tailwind/SKILL.md) | Converts static HTML/CSS/JS page designs into a Next.js App Router site with Tailwind CSS v4, then incrementally migrates off legacy stylesheets until tokens live only in the Tailwind config. Use when converting example HTML, design prototypes, or static marketing pages into Next.js components; when migrating `site.css` / custom CSS to Tailwind utilities; or when cleaning up duplicated `@theme` and `globals.css` after a Tailwind migration. |
-| [`sanity-next-page-builder`](./skills/sanity-next-page-builder/SKILL.md) | Connects a NextJS site to sanity, setting up the schema, hooking up the blockrenderer, seeding the cms |
+| [`html-to-next-tailwind`](./html-to-next-tailwind/SKILL.md) | Converts static HTML/CSS/JS page designs into a Next.js App Router site with Tailwind CSS v4, then incrementally migrates off legacy stylesheets until tokens live only in the Tailwind config. Use when converting example HTML, design prototypes, or static marketing pages into Next.js components; when migrating `site.css` / custom CSS to Tailwind utilities; or when cleaning up duplicated `@theme` and `globals.css` after a Tailwind migration. |
+| [`sanity-next-page-builder`](./sanity-next-page-builder/SKILL.md) | Connects a NextJS site to sanity, setting up the schema, hooking up the blockrenderer, seeding the cms |
 
 
 ## Usage
