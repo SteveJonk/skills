@@ -1,5 +1,5 @@
 ---
-name: html-to-nextjs
+name: tailwind-html-to-nextjs
 description: Convert an approved static HTML/Tailwind prototype into componentized, statically-rendered Next.js pages matching an existing project's conventions — no CMS/data-fetching yet. Invoke explicitly once a client has approved a prototype, e.g. "use html-to-nextjs to migrate this".
 ---
 
