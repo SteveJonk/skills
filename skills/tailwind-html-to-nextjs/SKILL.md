@@ -1,11 +1,15 @@
 ---
 name: tailwind-html-to-nextjs
-description: Convert an approved static HTML/Tailwind prototype into componentized, statically-rendered Next.js pages matching an existing project's conventions — no CMS/data-fetching yet. Invoke explicitly once a client has approved a prototype, e.g. "use html-to-nextjs to migrate this".
+description: Convert an approved static HTML/Tailwind prototype into componentized, statically-rendered Next.js pages matching an existing project's conventions — no CMS/data-fetching yet. Invoke explicitly once a client has approved a prototype, e.g. "use tailwind-html-to-nextjs to migrate this".
 ---
 
 # HTML to Next.js
 
 Turns a client-approved static HTML page into properly structured Next.js components inside an existing codebase. This step deliberately excludes Sanity/CMS wiring — the goal is a pixel-matched, statically-rendered baseline first.
+
+## Requirements
+
+- **`code-style` skill** from the `frontend` plugin ([claudepluginhub](https://www.claudepluginhub.com/skills/fubits1-frontend-plugins-frontend/code-style), source: https://github.com/fubits1/svelte-skills). Install with `npx claudepluginhub fubits1/svelte-skills --plugin frontend`. Invoke `/frontend:code-style` before writing components and follow it for naming, markup, forms and TypeScript. Where it conflicts with this skill or the existing project's conventions (e.g. its CSS-nesting rules vs. Tailwind utilities, Svelte-specific guidance), the project and this skill win. If the plugin isn't installed, tell the user and ask whether to continue without it.
 
 ## Inputs to gather before starting
 

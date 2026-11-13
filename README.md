@@ -13,10 +13,7 @@ A Skill is a folder containing a `SKILL.md` file with YAML frontmatter (`name` +
 | [`site-prototype`](./skills/site-prototype/SKILL.md) | Builds a standalone Tailwind HTML prototype for a client site, including a proposed design system, for client sign-off before any Next.js/Sanity work begins. |
 | [`tailwind-html-to-nextjs`](./skills/tailwind-html-to-nextjs/SKILL.md) | Converts an approved static HTML/Tailwind prototype into componentized, statically-rendered Next.js pages matching an existing project's conventions — no CMS wiring yet. |
 | [`wire-sanity`](./skills/wire-sanity/SKILL.md) | Turns static Next.js components into Sanity-driven content, schema-first: schema proposed and approved before any query or component code is touched. |
-| [`sanity-next-page-builder`](./skills/sanity-next-page-builder/SKILL.md) | Sets up and extends a Sanity CMS + Next.js page-builder from scratch: block array schema, shared link/CTA objects, Studio singletons, GROQ, and seed scripts. |
-| [`html-to-next-tailwind`](./skills/html-to-next-tailwind/SKILL.md) | Converts static HTML/CSS/JS designs directly into a Next.js + Tailwind v4 site, then migrates legacy CSS to Tailwind config tokens. |
 
-The first three form a pipeline for client work: `site-prototype` → `tailwind-html-to-nextjs` → `wire-sanity`. `sanity-next-page-builder` and `html-to-next-tailwind` are standalone alternatives for setting up Sanity from scratch or converting HTML directly, outside that pipeline.
 
 ## Usage
 

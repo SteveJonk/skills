@@ -29,6 +29,14 @@ Connects already-built, statically-rendered Next.js components to Sanity CMS. Th
   - Every block gets an `icon` (from `@sanity/icons`) and a `preview` with `select`/`prepare` that shows a meaningful title, the block type as subtitle, and an image when available.
   - Images use `options: {hotspot: true}` and an `alt` field (with validation where the design relies on the image).
   - Use `options.insertMenu` on the `pageBuilder` array (with `filter: true`, and `groups` when there are more than ~6 block types; `views` with list/grid when preview images exist).
+- **Every URL is an internal-or-external link.** Never model a link as a plain `url`/`string` field. Every link (CTAs, nav and footer items, card links, links inside blocks, and `link` annotations in Portable Text) uses one shared `link` object (and a `cta` object = `label` + the same link fields) with:
+  - `linkType`: radio `internal` | `external`
+  - `internalLink`: `reference` → page-like documents (hidden unless `internal`)
+  - `href`: absolute URL, `mailto:` or `tel:` (hidden unless `external`)
+  - validation that requires only the field for the active `linkType`
+  - optional `openInNewTab` boolean, only if the design needs it
+
+  **If the Studio already has a link/CTA type with internal/external handling, reuse it as-is** — keep its field names and behavior, don't create a parallel type or migrate existing content. If it exists but only supports one kind, extend it with the missing option rather than replacing it. Expand links with one shared GROQ fragment (`internalLink->{ _type, "slug": slug.current }`) and resolve them in the frontend with a single `resolveHref(link)` helper.
 - **Page document shape:** `title`, `slug` (validated, unique), `pageBuilder`, and `seo` (reuse an existing `seo` type if present). The homepage is a `page` document chosen via a reference in site settings (or a reserved slug, whichever the project already does).
 ### When not to use the page builder
  
@@ -72,5 +80,6 @@ Connects already-built, statically-rendered Next.js components to Sanity CMS. Th
 - Don't put presentation settings (colors, alignment, spacing, layout variants) into blocks by default.
 - Don't duplicate reusable content inside blocks when it should be a referenced document.
 - Don't turn static UI chrome into CMS fields "just in case" — over-modeling makes the Studio harder to use for the client's actual editing needs.
+- Don't use plain string/`url` fields for links — always the shared internal/external link type.
 - Don't skip block previews and icons — an array of blocks all labelled "Object" is unusable for editors.
 - Don't skip seeding real content — an empty or lorem-ipsum-filled Studio undersells the deliverable to the client.
